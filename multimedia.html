@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multimedia - Milla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#fff8f0;--paper:#fffdf9;--pink:#f39ab4;--pink-dark:#c75f80;--yellow:#f9d878;--mint:#b8e5d1;--lav:#d8c9f1;--ink:#42383d;--muted:#8d7d83;--line:#f0d9d6;--heading:'Fredoka',sans-serif;--body:'DM Sans',sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background-color:var(--cream);background-image:radial-gradient(#f4cbd3 1.1px,transparent 1.1px);background-size:22px 22px;color:var(--ink);font-family:var(--body);line-height:1.6}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;background:linear-gradient(115deg,transparent 0 48%,rgba(255,255,255,.65) 48% 52%,transparent 52% 100%);z-index:-1}
+main{max-width:1080px;margin:auto;padding:0 1.4rem 5rem}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 0;border-bottom:2px dashed var(--line)}
+.logo{font-family:var(--heading);font-size:1.1rem;color:var(--pink-dark)}
+.back{color:var(--ink);font-size:.82rem;font-weight:700;text-decoration:none}.back:hover{color:var(--pink-dark)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;padding:5.5rem 0 4.5rem}
+.eyebrow{display:inline-block;background:var(--yellow);padding:.35rem .8rem;border-radius:7px 18px 9px 16px;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transform:rotate(-2deg);margin:0 0 1.3rem}
+h1,h2,h3{font-family:var(--heading);margin:0;font-weight:600}h1{font-size:clamp(3.4rem,8vw,6.5rem);line-height:.95;letter-spacing:-.035em;color:var(--pink-dark);max-width:7ch}
+.intro{font-size:1.05rem;color:var(--muted);max-width:34rem;margin:1.5rem 0 0}
+.hero-art{position:relative;min-height:260px;display:flex;align-items:center;justify-content:center}.tape{position:absolute;width:92px;height:24px;background:rgba(249,216,120,.75);top:18px;right:18%;transform:rotate(8deg);z-index:2}.hero-card{background:var(--paper);padding:.75rem .75rem 1rem;box-shadow:0 18px 30px rgba(150,101,110,.16);transform:rotate(4deg);width:min(100%,290px)}.hero-card img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}.hero-card figcaption{text-align:center;font-family:var(--heading);font-size:1rem;margin-top:.7rem;color:var(--pink-dark)}
+.section-heading{display:flex;align-items:end;justify-content:space-between;gap:1rem;border-bottom:2px dashed var(--line);padding-bottom:1rem;margin-bottom:1.4rem}.section-heading h2{font-size:2rem}.section-heading span{font-size:.8rem;color:var(--muted)}
+.media-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:1.25rem}.media-card{padding:1rem;background:var(--paper);border:1px solid var(--line);box-shadow:0 12px 25px rgba(150,101,110,.1);border-radius:18px 24px 16px 22px}.media-card:nth-child(2){background:var(--mint);transform:rotate(1.2deg)}.media-card h3{font-size:1.15rem;margin-bottom:.7rem}.media-card iframe,.media-card audio{width:100%;border-radius:12px}.media-card iframe{display:block;aspect-ratio:16/9;border:0}.media-card p{font-size:.82rem;color:var(--muted);margin:.8rem 0 0}
+.social-links{display:grid;gap:.65rem;margin-top:1.25rem}.social-link{display:flex;align-items:center;gap:.7rem;padding:.75rem .85rem;background:rgba(255,255,255,.72);border:1px solid rgba(66,56,61,.1);border-radius:12px;color:var(--ink);font-size:.85rem;font-weight:700;text-decoration:none;transition:transform .2s ease,background .2s ease}.social-link:hover{transform:translateX(4px);background:#fff}.social-icon{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--pink);color:#fff;font-family:var(--heading);font-size:.9rem}.social-link:nth-child(2) .social-icon{background:#e96b87}.social-link:nth-child(3) .social-icon{background:#eea64f}
+.projects{margin-top:4rem}.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}.project{min-height:185px;padding:1.25rem;display:flex;flex-direction:column;justify-content:space-between;border-radius:22px 15px 20px 14px;border:1px solid rgba(66,56,61,.06);box-shadow:0 10px 20px rgba(150,101,110,.08)}.project:nth-child(1){background:var(--pink)}.project:nth-child(2){background:var(--lav);transform:translateY(1rem)}.project:nth-child(3){background:var(--yellow)}.project:nth-child(4){background:var(--mint)}.project:nth-child(5){background:#f6c9bb;transform:translateY(1rem)}.project:nth-child(6){background:#d7e8f0}.project-number{font-size:.75rem;font-weight:700;opacity:.7}.project h3{font-size:1.3rem;line-height:1.1;margin:.8rem 0 .35rem}.project p{font-size:.82rem;margin:0;color:rgba(66,56,61,.75)}
+.footer-note{display:flex;justify-content:space-between;border-top:2px dashed var(--line);margin-top:5rem;padding-top:1.25rem;color:var(--muted);font-size:.78rem}
+@media(max-width:760px){.hero{grid-template-columns:1fr;gap:2rem;padding:4rem 0}.hero-art{min-height:230px}.media-grid{grid-template-columns:1fr}.project-grid{grid-template-columns:repeat(2,1fr)}.project:nth-child(2),.project:nth-child(5){transform:none}}
+@media(max-width:480px){main{padding-inline:1rem}.topbar{align-items:flex-start;gap:1rem}.hero{padding:3.5rem 0}.section-heading{align-items:flex-start;flex-direction:column;gap:.25rem}.project-grid{grid-template-columns:1fr}.footer-note{display:block}.footer-note span{display:block;margin-top:.35rem}}
+</style>
+</head>
+<body><main>
+<header class="topbar"><div class="logo">✦ Skyflowers creative corner</div><a class="back" href="index.html">&larr; Kembali ke beranda</a></header>
+
+<section class="hero">
+	<div><p class="eyebrow">Play, create, repeat</p><h1>Multimedia moodboard</h1><p class="intro">Ruang kecil untuk menyimpan video, audio, dan ide digital yang membuat proses berkarya terasa lebih hidup.</p></div>
+	<div class="hero-art"><span class="tape"></span><figure class="hero-card"><img src="assets/profile-me.png" alt="Suasana kreatif dengan cahaya hangat"><figcaption> Welecome to activity Creative♡</figcaption></figure></div>
+</section>
+
+<section aria-labelledby="media-title"><div class="section-heading"><h2 id="media-title">Watch &amp; listen</h2><span>tiny pieces of inspiration</span></div><div class="media-grid">
+	<article class="media-card"><h3>Jinji Journey </h3><iframe src="https://www.youtube.com/embed/g7qrhGoXa5M?start=16&amp;autoplay=1&amp;mute=1&amp;controls=1&amp;rel=0" title="A quiet creative day" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe><p>Channel YouTube aku! Aku jinji, pecinta traveling dan menjelajah 𐙚˙✧˖°📷 ༘ ⋆｡ ˚ yang senang berbagi tentang perjalanan aku, disini </p></article>
+		<article class="media-card"><h3>Love2kheart</h3><p>Di waktu lain aku belajar mencari tambahan uang melalui affiliate TikTok dan berjualan di Shopee.</p><div class="social-links"><a class="social-link" href="https://www.tiktok.com/@love2kheart" target="_blank" rel="noopener noreferrer" aria-label="Buka TikTok Love2kheart"><span class="social-icon">♪</span><span>TikTok / @love2kheart</span></a><a class="social-link" href="https://www.instagram.com/love2kheart/" target="_blank" rel="noopener noreferrer" aria-label="Buka Instagram Love2kheart"><span class="social-icon">◎</span><span>Instagram / love2kheart</span></a><a class="social-link" href="https://shopee.co.id/" target="_blank" rel="noopener noreferrer" aria-label="Buka Shopee"><span class="social-icon">S</span><span>Shopee / Lihat toko</span></a></div></article>
+    <article class="media-card"><h3>🎧 Sound of focus</h3><audio controls><source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg">Browser tidak mendukung audio.</audio><p>Playlist mini untuk menemani sesi editing dan brainstorming.</p></article>
+</div></section>
+
+<!-- <section class="projects" aria-labelledby="project-title"><div class="section-heading"><h2 id="project-title">Creative projects</h2><span>ideas in progress</span></div><div class="project-grid">
+	<article class="project"><span class="project-number">01 / VIDEO</span><div><h3>Day in my QA life</h3><p>Storytelling ringan tentang rutinitas testing.</p></div></article>
+	<article class="project"><span class="project-number">02 / AUDIO</span><div><h3>Focus playlist</h3><p>Suara dan musik untuk menjaga mood tetap menyala.</p></div></article>
+	<article class="project"><span class="project-number">03 / DESIGN</span><div><h3>Color diary</h3><p>Eksperimen warna dari benda-benda sehari-hari.</p></div></article>
+	<article class="project"><span class="project-number">04 / EDITING</span><div><h3>Frame by frame</h3><p>Belajar menyusun potongan cerita yang rapi.</p></div></article>
+	<article class="project"><span class="project-number">05 / CONTENT</span><div><h3>Behind the screen</h3><p>Catatan kecil dari proses membuat konten.</p></div></article>
+	<article class="project"><span class="project-number">06 / IDEAS</span><div><h3>Next little thing</h3><p>Tempat untuk ide yang belum selesai tumbuh.</p></div></article>
+</div></section> -->
+
+<footer class="footer-note"><span>Made with curiosity by Milla</span><span>Multimedia / 2026</span></footer>
+</main></body>
+</html>

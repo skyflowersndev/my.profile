@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photography - Milla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#11100f;--surface:#1d1b19;--accent:#d98268;--accent-dark:#a95743;--ink:#f5eee7;--muted:#b8ada4;--line:#39332e;--heading:'Playfair Display',Georgia,serif;--body:'DM Sans',sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.6}
+body:before{content:"";display:block;height:5px;background:var(--accent)}
+main{max-width:1120px;margin:auto;padding:0 2rem 5rem}
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 0;border-bottom:1px solid var(--line)}
+.brand{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.back{color:var(--ink);font-size:.8rem;font-weight:600;text-decoration:none}
+.back:hover{color:var(--accent)}
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(220px,.75fr);gap:4rem;align-items:end;padding:6rem 0 4.5rem}
+.eyebrow{color:var(--accent);font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin:0 0 1rem}
+h1,h2{font-family:var(--heading);font-weight:700;margin:0}
+h1{font-size:clamp(3.5rem,8vw,7rem);letter-spacing:-.04em;line-height:.98;max-width:8ch}
+.intro{color:var(--muted);font-size:1.05rem;max-width:34rem;margin:0 0 .5rem}
+.hero-note{border-left:2px solid var(--accent);padding-left:1.25rem;color:var(--muted);font-size:.85rem;margin:0}
+.collection-label{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:1.25rem;margin-bottom:1.25rem}
+.collection-label h2{font-size:1.35rem}.collection-label span{color:var(--muted);font-size:.8rem}
+.photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+.photos figure{margin:0;background:var(--surface);padding:.65rem;border:1px solid var(--line);transition:transform .25s ease,box-shadow .25s ease}
+.photos figure:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(73,53,39,.12)}
+.photos img{display:block;width:100%;height:100%;min-height:0;object-fit:cover;filter:saturate(.86)}
+.photos img{aspect-ratio:4/3}
+.photos figcaption{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem .35rem .3rem;font-size:.82rem;font-weight:600}
+.photos figcaption span{color:var(--muted);font-size:.72rem;font-weight:500;text-align:right}
+.footer-note{display:flex;justify-content:space-between;gap:1rem;border-top:1px solid var(--line);margin-top:4rem;padding-top:1.25rem;color:var(--muted);font-size:.78rem}
+@media(max-width:900px){.photos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){main{padding:0 1.25rem 3rem}.hero{grid-template-columns:1fr;gap:2rem;padding:4rem 0 3.5rem}h1{font-size:clamp(3.3rem,18vw,5.5rem)}.photos{grid-template-columns:1fr}.footer-note{display:block}.footer-note span{display:block;margin-top:.35rem}}
+</style>
+</head>
+<body><main>
+<header class="site-header">
+	<div class="brand">Milla / Visual Archive</div>
+	<a class="back" href="index.html">&larr; Kembali ke beranda</a>
+</header>
+
+<section class="hero">
+	<div>
+		<p class="eyebrow">Selected work / 2026</p>
+		<h1>Photography</h1>
+	</div>
+	<div>
+		<p class="intro">Kumpulan eksplorasi visual Milla: cahaya, warna, dan momen kecil yang punya cerita.</p>
+		<p class="hero-note">Mencari keheningan di antara detail yang sering terlewat.</p>
+	</div>
+</section>
+
+<section aria-labelledby="collection-title">
+	<div class="collection-label"><h2 id="collection-title">A study of light</h2><span>03 photographs</span></div>
+	<div class="photos">
+		<figure><img src="https://picsum.photos/id/1015/800/1000" alt="Pemandangan alam dengan cahaya lembut"><figcaption>Nature and light <span>01 / Landscape</span></figcaption></figure>
+		<figure><img src="https://picsum.photos/id/1060/700/440" alt="Jalan di antara pepohonan pada sore hari"><figcaption>Quiet afternoon <span>02 / Stillness</span></figcaption></figure>
+		<figure><img src="https://picsum.photos/id/1040/700/440" alt="Detail arsitektur kota"><figcaption>Urban details <span>03 / Geometry</span></figcaption></figure>
+		<figure><img src="https://picsum.photos/id/1025/700/440" alt="Anjing duduk di luar ruangan"><figcaption>Soft companion <span>04 / Portrait</span></figcaption></figure>
+		<figure><img src="https://picsum.photos/id/1035/700/440" alt="Pegunungan diselimuti kabut"><figcaption>Between mountains <span>05 / Atmosphere</span></figcaption></figure>
+		<figure><img src="https://picsum.photos/id/1069/700/440" alt="Tekstur dedaunan hijau"><figcaption>Green study <span>06 / Texture</span></figcaption></figure>
+	</div>
+</section>
+
+<footer class="footer-note"><span>Photography by Milla</span><span>Light, form, and everyday stories.</span></footer>
+</main></body></html>

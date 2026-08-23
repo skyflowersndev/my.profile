@@ -5,23 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MIlla - QA Engginer</title>
 
-<!-- ✿ Komentar HTML: halaman ini adalah "project web" personal branding
-     Bella, seorang QA Engineer. Semua bagian di bawah sengaja memakai
-     ragam tag HTML: heading, paragraf, list, form, gambar+teks, video,
-     audio, dan elemen semantik — dibungkus tema cute ✿ -->
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --cream:#fff6ef;
+    --cream:#ffffff;
     --card:#ffffff;
     --pink:#ff8fab;
+    --white:#f3ebed;
     --pink-soft:#ffe0e9;
     --mint:#9fe6c8;
     --mint-soft:#e3fbf1;
+    --White:#e3fbf1;
     --lav:#c9b6ff;
+    --cream-brown:#ead8c3;
     --lav-soft:#efe7ff;
     --ink:#4a3f45;
     --dim:#8a7f86;
@@ -42,7 +40,6 @@
   .highlight{ color:var(--pink); }         /* class selector */
   #brand-name{ color:var(--pink); }        /* id selector */
 
-  /* ===== NAV (elemen semantik: nav) ===== */
   nav.topbar{
     position:sticky; top:0; z-index:20;
     display:flex; align-items:center; justify-content:space-between;
@@ -97,16 +94,35 @@
   #about p{ max-width:62ch; margin:0 auto; color:var(--ink); font-size:1.02rem; }
   #about mark{ background:var(--mint-soft); padding:0 .3rem; border-radius:6px; }
 
-  /* ===== SKILLS (list) ===== */
-  #skills{ background:var(--card); border-radius:32px; margin:2rem auto; box-shadow:0 15px 40px -25px rgba(0,0,0,.15); }
-  #skills h2{ text-align:center; font-size:1.6rem; margin-bottom:2rem; }
-  .skill-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.2rem; }
-  .skill-card{ background:var(--pink-soft); border-radius:20px; padding:1.3rem 1.4rem; }
-  .skill-card h3{ font-size:1rem; margin-bottom:.6rem; }
-  .skill-card ul{ margin:0; padding-left:1.1rem; font-weight:600; font-size:.9rem; color:var(--ink); }
-  .skill-card li{ margin-bottom:.3rem; }
-  .skill-card:nth-child(2){ background:var(--mint-soft); }
-  .skill-card:nth-child(3){ background:var(--lav-soft); }
+  /* ===== PORTFOLIO ===== */
+  #portfolio{ background:var(--card); border-radius:32px; margin:2rem auto; box-shadow:0 15px 40px -25px rgba(0,0,0,.15); }
+  #portfolio h2{ text-align:center; font-size:1.6rem; margin-bottom:.5rem; }
+  #portfolio .sub{ text-align:center; color:var(--dim); margin:0 auto 2rem; }
+  .portfolio-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.2rem; }
+  .portfolio-card{ display:block; color:var(--ink); text-decoration:none; border-radius:20px; padding:1.3rem 1.4rem; transition:transform .2s, box-shadow .2s; }
+  .portfolio-card:hover{ transform:translateY(-5px); box-shadow:0 12px 25px -15px rgba(74,63,69,.5); }
+  .portfolio-card h3{ font-size:1.1rem; margin-bottom:.6rem; }
+  .portfolio-card p{ margin:0; font-weight:600; font-size:.9rem; }
+  .portfolio-card:nth-child(1){ background:var(--pink-soft); }
+  .portfolio-card:nth-child(2){ background:var(--mint-soft); }
+  .portfolio-card:nth-child(3){ background:var(--lav-soft); }
+  .portfolio-card:nth-child(4){ background:var(--cream-brown); }
+
+  /* ===== AFFILIATE & PRODUCT BRANDING ===== */
+  #shop{ background:var(--pink-soft); border-radius:32px; margin:2rem auto; }
+  #shop h2{ text-align:center; font-size:1.6rem; margin-bottom:.5rem; }
+  #shop .sub{ text-align:center; color:var(--dim); margin:0 auto 2rem; }
+  .product-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1.2rem; width:min(100%,760px); margin:0 auto; }
+  .product-card{ background:var(--card); border-radius:18px; overflow:hidden; box-shadow:0 12px 30px -20px rgba(0,0,0,.25); }
+  .product-card img{ width:100%; height:150px; display:block; aspect-ratio:4/3; object-fit:cover; }
+  .product-info{ padding:1rem 1.1rem 1.2rem; }
+  #shop .product-card:first-child{ display:flex; align-items:center; max-width:520px; margin:0 auto; padding:.7rem; }
+  #shop .product-card:first-child img{ width:120px; height:120px; flex:0 0 120px; border-radius:12px; }
+  #shop .product-card:first-child .product-info{ padding:.4rem .8rem; }
+  .product-info h3{ font-size:1.05rem; margin-bottom:.3rem; }
+  .product-info p{ color:var(--dim); font-size:.85rem; margin:0 0 .8rem; }
+  .product-link{ display:inline-block; background:var(--pink); color:#fff; padding:.55rem .9rem; border-radius:99px; text-decoration:none; font-size:.82rem; font-weight:700; }
+  .product-link:hover{ background:#ff6f97; }
 
   /* ===== GALLERY (gambar + text) ===== */
   #gallery h2{ text-align:center; font-size:1.6rem; margin-bottom:2rem; }
@@ -148,6 +164,7 @@
   @media(max-width:520px){
     form.cute-form{ max-width:100%; }
     form.cute-form > div{ grid-template-columns:1fr; }
+    #shop .product-card:first-child img{ width:95px; height:95px; flex-basis:95px; }
   }
 
   /* ===== FOOTER (elemen semantik: footer) ===== */
@@ -166,7 +183,8 @@
   <div class="logo">🐞 <span id="brand-name">Milla.qa</span></div>
   <ul>
     <li><a href="#about">Tentang</a></li>
-    <li><a href="#skills">Skill</a></li>
+    <li><a href="#portfolio">Portofolio</a></li>
+    <li><a href="#shop">Toko</a></li>
     <li><a href="#gallery">Galeri</a></li>
     <li><a href="#media">Media</a></li>
     <li><a href="#contact">Kontak</a></li>
@@ -176,68 +194,92 @@
 <!-- elemen semantik: header sebagai hero -->
 <header class="hero" id="top">
   <div>
-    <span class="badge">✨ open for QA jobs</span>
+    <span class="badge">Quality Assurance Engineer</span>
     <!-- Heading -->
-    <h1>Halo, aku MILLA <span class="highlight">Bug Hunter</span> senang mencari bug serius soal kualitas 🐛🔍</h1>
+    <h1>Halo, I am Milla </h1>
     <!-- Paragraf -->
-    <p class="lead">QA Engineer yang percaya testing itu nggak harus serem — cukup teliti, sabar, dan sedikit gemas tiap nemu bug baru.</p>
+    <p class="lead">I am a QA Engineer with a interest in photography, drawing, multimedia, and journaling. I enjoy combining creativity with analytical thinking in both my work and hobbies.
+</p>
     <div class="cta-row">
-      <a class="btn solid" href="#contact">Ajak Kolaborasi 💌</a>
+     <!--  <a class="btn solid" href="#contact">Ajak Kolaborasi 💌</a>-->
       <a class="btn line" href="#gallery">Lihat Karya</a>
     </div>
   </div>
   <!-- Gambar dan text (figure + figcaption) -->
   <div class="avatar-wrap">
     <figure class="avatar-card">
-      <img src="http://github.com/skyflowersndev/personal-branding-sederhana/blob/main/Profile.jpg" alt="Foto ilustrasi Bella, QA Engineer">
-      <figcaption>Milla— sedang mencari bug tersembunyi 🕵️‍♀️</figcaption>
+      <img src="assets/profile.jpg" alt="Foto ilustrasi Mila, QA Engineer">
+      <figcaption> Milla </figcaption>
     </figure>
   </div>
 </header>
 
-<!-- About: paragraf + text formatting -->
+<!-- About: paragraf + text formatting 
 <section id="about">
   <div class="label">tentang aku</div>
   <h2>Kenapa aku suka jadi QA? 🌸</h2>
   <p>
-    Buat aku, testing itu kayak main petak umpet sama <b>bug</b> — cuma bedanya, aku selalu menang.
-    Aku suka hal-hal yang <i>detail</i> dan <mark>rapi</mark>, jadi cocok banget kerja di dunia Quality Assurance.
-    Setiap <s>error</s> yang ketemu itu bukan masalah, tapi <strong>petunjuk</strong> buat bikin produk makin baik. 💗
+    Buat aku, testing itu kayak main petak umpet sama <b>bug</b> dan aku tertarik di dunia seni dan multimedia<strong>petunjuk</strong> buat bikin produk makin baik. 💗
   </p>
-</section>
+</section> -->
 
-<!-- Skills: list -->
-<section id="skills">
-  <h2>Skill Andalan 🧸</h2>
-  <div class="skill-grid">
-    <div class="skill-card">
-      <h3>🧪 Manual Testing</h3>
-      <ul>
-        <li>Test case & test plan</li>
-        <li>Functional testing</li>
-        <li>Bug reporting</li>
-      </ul>
-    </div>
-    <div class="skill-card">
-      <h3>🤖 Automation</h3>
-      <ul>
-        <li>Playwright & Selenium</li>
-        <li>Postman API testing</li>
-        <li>CI/CD basic</li>
-      </ul>
-    </div>
-    <div class="skill-card">
-      <h3>💌 Soft Skill</h3>
-      <ul>
-        <li>Teliti & sabar</li>
-        <li>Komunikasi santai tapi jelas</li>
-        <li>Kerja tim yang asik</li>
-      </ul>
-    </div>
+<!-- Portfolio -->
+<section id="portfolio">
+  <h2>Portofolio ✨</h2>
+  <p class="sub">Pilih karya untuk melihat halaman detailnya.</p>
+  <div class="portfolio-grid">
+    <a class="portfolio-card" href="photography.html">
+      <h3>📷 Photography</h3>
+      <p>Eksplorasi cerita dan komposisi melalui foto.</p>
+    </a>
+    <a class="portfolio-card" href="multimedia.html">
+      <h3>Multimedia</h3>
+      <p>Video, audio, dan karya digital dalam satu ruang.</p>
+    </a>
+   <!-- <a class="portfolio-card" href="qa-testing.html">
+      <h3>QA Gallery</h3>
+      <p>Potret aku dalam mengikut event & having fun disela-sela pekerjaan</p>
+    </a>-->
+     <a class="portfolio-card" href="artikel.html">
+      <h3> Artikel</h3>
+      <p>Membuat jurnal & artikel di media digital seperti Medium</p>
+    </a>
   </div>
 </section>
 
-<!-- Gallery: gambar + text -->
+<!-- Affiliate and product branding -->
+<section id="shop">
+  <h2>Project Public Me</h2>
+  <p class="sub">Project yang saya kembangkan.</p>
+  <div class="product-grid">
+    <article class="product-card">
+      <img src="assets/project/skyflowersn-both.svg" alt="Buku catatan untuk journaling">
+      <div class="product-info">
+        <h3>Skyflowersn PhotoBoth </h3>
+        <p> Photo booth berbasis web dengan tampilan cute pastel Y2K ala Pinterest</p>
+        <a class="product-link" href="/assets/project/skyflowersn-both.svg" target="_blank" rel="noopener noreferrer">Lihat Produk</a>
+      </div>
+    </article>
+   <!-- <article class="product-card">
+      <img src="https://picsum.photos/id/201/500/375" alt="Kamera untuk membuat konten">
+      <div class="product-info">
+        <h3>Content Creator Kit</h3>
+        <p>Perlengkapan sederhana untuk foto dan video yang lebih rapi.</p>
+        <a class="product-link" href="https://shopee.co.id/" target="_blank" rel="noopener noreferrer">Lihat Produk</a>
+      </div>
+    </article> -->
+    <!-- <article class="product-card">
+      <img src="https://picsum.photos/id/1060/500/375" alt="Meja kerja untuk produktivitas">
+      <div class="product-info">
+        <h3>Desk Setup Essentials</h3>
+        <p>Pelengkap meja kerja agar testing dan editing terasa nyaman.</p>
+        <a class="product-link" href="https://shopee.co.id/" target="_blank" rel="noopener noreferrer">Lihat Produk</a>
+      </div>
+    </article>-->
+  </div>
+</section>
+
+<!-- Gallery: gambar + text 
 <section id="gallery">
   <h2>Momen Seru Ngetes 🎀</h2>
   <div class="gallery-grid">
@@ -254,9 +296,9 @@
       <div class="cap"><b>Bug Report Rapi</b><span>Laporan jelas, developer senang 🥰</span></div>
     </div>
   </div>
-</section>
+</section -->
 
-<!-- Media: video & audio -->
+<!-- Media: video & audio 
 <section id="media">
   <h2>Dengar &amp; Lihat Aku Beraksi 🎬</h2>
   <p class="sub">Sedikit cuplikan dan suara semangat khas Bella</p>
@@ -278,9 +320,9 @@
       <p>Ini suara "GRRR" aku tiap berhasil nemu bug tersembunyi 🦖</p>
     </div>
   </div>
-</section>
+</section> -->
 
-<!-- Contact: form -->
+<!-- Contact: form 
 <section id="contact">
   <h2>Yuk, Ngobrol! 💬</h2>
   <p class="sub">Isi form di bawah, nanti aku balas secepat aku nemu bug 🐞</p>
@@ -299,17 +341,17 @@
     </div>
     <button type="submit">Kirim Pesan 🎈</button>
   </form>
-</section>
+</section> -->
 
 <!-- elemen semantik: footer -->
 <footer class="site-footer">
-  Dibuat dengan 💗 dan secangkir teh oleh Bella, QA Engineer.
+  Dibuat dengan 💗 dan secangkir teh oleh Milla
   <div class="socials">
-    <a href="mailto:bella.qa@email.com">Email</a>
-    <a href="https://www.linkedin.com/in/millaaprillya/">LinkedIn</a>
+    <a href="mailto:millaaprillya2a@email.com">Email</a>
+   <!-- <a href="https://www.linkedin.com/in/millaaprillya/">LinkedIn</a>-->
     <a href="">GitHub</a>
   </div>
-  <p>© 2026 bella.qa — semua bug sudah ditangkap 🐛✔️</p>
+  <p>© 2026 milla - Portfolio</p>
 </footer>
 
 </body>
