@@ -2,7 +2,7 @@
 
 Halaman web personal branding milik **Milla**, seorang **QA Engineer** yang juga memiliki ketertarikan pada fotografi, multimedia, dan journaling. Website ini menjadi ruang untuk menampilkan sisi profesional sekaligus kreatif dari dirinya dalam satu tempat.
 
-🔗 **Live site:** https://skyflowersndev.github.io/personal-branding-sederhana/
+🔗 **Live site:** https://skyflowersndev.github.io/my.profile/
 
 ## ✨ Tentang Halaman Ini
 
